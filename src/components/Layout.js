@@ -1,13 +1,25 @@
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 export function Layout({ children }) {
+  const [topics, setTopics] = useState([]);
+  useEffect(()=>{
+    fetch('http://localhost:9999/topics')
+      .then(resp=>resp.json())
+      .then(result=>{
+        setTopics(result);
+      })
+  },[])
   return <>
     <header>
       <h1><Link href="/">WEB</Link></h1>
     </header>
     <nav>
       <ol>
-        <li><Link href="/read/1">html</Link></li>
-        <li><Link href="/read/2">css</Link></li>
+        {topics.map(t=>
+          <li key={t.id}>
+            <Link href={`/read/${t.id}`}>{t.title}</Link>
+          </li>  
+        )}
       </ol>
     </nav>
     <article>
