@@ -7,10 +7,8 @@ export default function Read() {
       <Head>
         <title>Welcome - read</title>
       </Head>
-      <Layout>
-        <h2>Read</h2>
-        Hello, Read
-      </Layout>
+      <h2>Read</h2>
+      Hello, Read
     </>
   )
 }

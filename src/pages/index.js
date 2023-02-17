@@ -6,10 +6,8 @@ export default function Home() {
       <Head>
         <title>Welcome - web!</title>
       </Head>
-      <Layout>
-        <h2>Welcome</h2>
-        Hello, WEB
-      </Layout>
+      <h2>Welcome</h2>
+      Hello, WEB
     </>
   )
 }

@@ -7,10 +7,8 @@ export default function Create() {
       <Head>
         <title>Welcome - Create</title>
       </Head>
-      <Layout>
-        <h2>Create</h2>
-        Hello, Create
-      </Layout>
+      <h2>Create</h2>
+      Hello, Create
     </>
   )
 }
