@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 export function Layout({ children }) {
   const [topics, setTopics] = useState([]);
   useEffect(()=>{
-    fetch('http://localhost:9999/topics')
+    fetch(process.env.NEXT_PUBLIC_API_URL+'topics')
       .then(resp=>resp.json())
       .then(result=>{
         setTopics(result);

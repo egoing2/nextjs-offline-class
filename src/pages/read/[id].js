@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from 'react';
 export async function getServerSideProps(context){
-  const resp = await fetch('http://localhost:9999/topics/'+context.query.id);
+  const resp = await fetch(process.env.NEXT_PUBLIC_API_URL+'topics/'+context.query.id);
   const topic = await resp.json();
   return {
     props: {
