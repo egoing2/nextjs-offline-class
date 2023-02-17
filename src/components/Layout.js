@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 export function Layout({ children }) {
+  const router = useRouter();
   const [topics, setTopics] = useState([]);
   useEffect(()=>{
     fetch(process.env.NEXT_PUBLIC_API_URL+'topics')
@@ -8,7 +10,7 @@ export function Layout({ children }) {
       .then(result=>{
         setTopics(result);
       })
-  },[])
+  },[router.query.id])
   return <>
     <header>
       <h1><Link href="/">WEB</Link></h1>
